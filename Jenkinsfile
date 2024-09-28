@@ -8,7 +8,7 @@ pipeline {
                 checkout scm
             }
             steps {
-                echo finished!
+                echo finished
             }
         }
     }
