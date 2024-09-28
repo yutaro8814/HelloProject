@@ -11,9 +11,10 @@ version = '0.0.1-SNAPSHOT'
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
-        vendor = JvmVendorSpec.AMAZON_CORRETTO // この設定が重要
+        vendor = JvmVendorSpec.AMAZON // ここを修正
     }
 }
+
 
 
 configurations {
