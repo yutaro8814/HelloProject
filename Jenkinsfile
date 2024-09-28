@@ -7,9 +7,24 @@ pipeline {
                 // GitHubリポジトリからコードをチェックアウト
                 checkout scm
             }
+        }
+
+        stage('Build') {
             steps {
-                echo finished
+                // gradlewに実行権限を付与
+                sh 'chmod +x gradlew'
+                // Gradle buildタスクを実行し、プロジェクトをビルド
+                sh './gradlew clean build'
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build succeeded and JAR file created!'
+        }
+        failure {
+            echo 'Build failed.'
         }
     }
 }
