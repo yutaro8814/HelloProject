@@ -7,6 +7,9 @@ pipeline {
                 // GitHubリポジトリからコードをチェックアウト
                 checkout scm
             }
+            steps {
+                echo finished!
+            }
         }
     }
 }
